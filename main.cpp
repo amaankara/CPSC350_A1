@@ -249,11 +249,17 @@ void writeToFile(){
   for(int i=0; i<1000; ++i){
     //creating the Gaussian varibale
     float gaussainVar = gauDistribution(mean, sd);
-    int writeA = (int)((float)Acnt/charNum)*gaussainVar;
+
+    int writeA = meanA*gaussainVar;
+    cout<<gaussainVar<<endl;
+    //cout<<writeA<<"          "<<(float)Acnt/charNum<<endl;
     //cout<<sd  << " " << mean << " " << meanA << " " << gauDistribution << endl;
-    int writeC = (int)((float)Ccnt/charNum)*gaussainVar;
-    int writeT = (int)((float)Tcnt/charNum)*gaussainVar;
-    int writeG = (int)((float)Gcnt/charNum)*gaussainVar;
+    int writeC = meanC*gaussainVar;
+    //cout<<writeC<<"          "<<(float)Ccnt/charNum<<endl;
+    int writeT = meanT*gaussainVar;
+    //cout<<writeT<<"          "<<(float)Tcnt/charNum<<endl;
+    int writeG = meanG*gaussainVar;
+    //cout<<writeG<<"          "<<(float)Gcnt/charNum<< endl;
 
     // if(writeA >= writeC && writeA >= writeT && writeA >= writeG){
     //   loopCount = writeA;
@@ -282,25 +288,26 @@ void writeToFile(){
     for (int j = 0; j < writeG; ++j) {
       writeline+="G";
     }
+   
+   //  for (int j = 0; j < loopCount; ++j) {
+   //    if(a < writeA){
+   //      writeline += "A";
+   //      a++;
+   //    }
+   //   if(c < writeC){
+   //     writeline += "C";
+   //     c++;
+   //   }
+   //   if(t < writeT){
+   //     writeline += "T";
+   //     t++;
+   //   }
+   //   if(g < writeG){
+   //     writeline += "G";
+   //     g++;
+   //   }
+   // }
 
-    // for (int j = 0; j < loopCount; ++j) {
-    //   if(a < writeA){
-    //     writeline += "A";
-    //     a++;
-    //   }
-    //  if(c < writeC){
-    //    writeline += "C";
-    //    c++;
-    //  }
-    //  if(t < writeT){
-    //    writeline += "T";
-    //    t++;
-    //  }
-    //  if(g < writeG){
-    //    writeline += "G";
-    //    g++;
-    //  }
-    // }
     //cout<<writeline<<endl;
 
     //outputing to the file
